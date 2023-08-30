@@ -27,9 +27,14 @@ public class Ball : MonoBehaviour
 
     public void CheckBoundaries()
     {
-        if (transform.position.x > maxXPosition || transform.position.x < -maxXPosition)
+        if (transform.position.x > maxXPosition)
         {
-            BallSpawner.Instance.SpawnBall();
+            Scoreboard.Instance.GiveToP1();
+            Destroy(gameObject);
+        }
+        else if (transform.position.x < -maxXPosition)
+        {
+            Scoreboard.Instance.GiveToP2();
             Destroy(gameObject);
         }
     }
