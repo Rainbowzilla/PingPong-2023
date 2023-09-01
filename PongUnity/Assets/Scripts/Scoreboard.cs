@@ -29,11 +29,11 @@ public class Scoreboard : MonoBehaviour
     {
         if (p1Score >= maxScore)
         {
-            winMessageText.text = "P2 " + winMessage;
+            winMessageText.text = "P1 " + winMessage;
         }
         else if (p2Score >= maxScore)
         {
-            winMessageText.text = "P1 " + winMessage;
+            winMessageText.text = "P2 " + winMessage;
         }
         else
         {

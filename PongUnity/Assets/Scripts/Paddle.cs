@@ -40,6 +40,7 @@ public class Paddle : MonoBehaviour
             float yHitDirection = (collision.transform.position.y - transform.position.y);
             Vector3 hitDirection = new Vector3(ballHitXDirection, yHitDirection, 0);
             collision.gameObject.GetComponent<Ball>().Bounce(hitDirection);
+            print("The ball hit the wall");
         }
     }
 }

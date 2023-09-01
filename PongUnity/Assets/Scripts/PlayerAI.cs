@@ -6,12 +6,8 @@ public class PlayerAI : MonoBehaviour
 {
     public Paddle paddle;
     Ball currentBall;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public float distanceBuffer;
+    public bool overridePlayer;
 
     // Update is called once per frame
     void Update()
@@ -26,14 +22,25 @@ public class PlayerAI : MonoBehaviour
 
     void FindBall()
     {
-        if (currentBall == null)
+        if (overridePlayer == true)
         {
-            currentBall = FindObjectOfType<Ball>();
+            if (currentBall == null)
+            {
+                currentBall = FindObjectOfType<Ball>();
+            }
         }
+        FollowBall();
     }
 
     void FollowBall()
     {
-        if (currentBall.transform.position.y )
+        if (currentBall.transform.position.y + distanceBuffer > paddle.transform.position.y)
+        {
+            paddle.MoveUp();
+        }
+        if (currentBall.transform.position.y - distanceBuffer < paddle.transform.position.y)
+        {
+            paddle.MoveDown();
+        }
     }
 }
