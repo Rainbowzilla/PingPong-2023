@@ -34,11 +34,11 @@ public class PlayerAI : MonoBehaviour
 
     void FollowBall()
     {
-        if (currentBall.transform.position.y + distanceBuffer > paddle.transform.position.y)
+        if (currentBall.transform.position.y + distanceBuffer > paddle.transform.position.y && transform.position.y < paddle.maxYposition)
         {
             paddle.MoveUp();
         }
-        if (currentBall.transform.position.y - distanceBuffer < paddle.transform.position.y)
+        if (currentBall.transform.position.y - distanceBuffer < paddle.transform.position.y && transform.position.y > -paddle.maxYposition)
         {
             paddle.MoveDown();
         }

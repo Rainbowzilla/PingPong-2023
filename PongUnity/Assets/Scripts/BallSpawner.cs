@@ -16,19 +16,6 @@ public class BallSpawner : MonoBehaviour
         Instance = this;
     }
 
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        if (Input.GetKey(KeyCode.Space))
-        {
-            SpawnBall();
-        }
-    }
-
     public void SpawnBall()
     {
         //Spawns ball based on prefab
